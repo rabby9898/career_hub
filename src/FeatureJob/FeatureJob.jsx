@@ -12,7 +12,7 @@ const FeatureJob = ({ children }) => {
   return (
     <>
       <div>{children}</div>
-      <div>
+      <div className="grid grid-cols-2 gap-10 p-5">
         {jobs.map((job) => (
           <Job key={job.id} job={job}></Job>
         ))}
