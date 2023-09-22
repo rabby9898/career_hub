@@ -1,3 +1,5 @@
+import { MdLocationOn } from "react-icons/md";
+import { AiOutlineDollarCircle } from "react-icons/ai";
 const Job = ({ job }) => {
   const {
     logo,
@@ -8,6 +10,7 @@ const Job = ({ job }) => {
     location,
     salary,
   } = job;
+
   return (
     <div>
       <div className="card w-full bg-base-100 shadow-xl">
@@ -26,8 +29,16 @@ const Job = ({ job }) => {
             </button>
           </div>
           <div className="w-[70%] my-4 flex">
-            <p className="text-lg text-[#757575] ">{location}</p>
-            <p className="text-lg text-[#757575] ">{salary}</p>
+            <p className="text-lg text-[#757575] flex items-center gap-2">
+              {" "}
+              <MdLocationOn />
+              {location}
+            </p>
+
+            <p className="text-lg text-[#757575] flex items-center gap-2">
+              <AiOutlineDollarCircle />
+              {salary}
+            </p>
           </div>
           <div className="card-actions">
             <button className="btn btn-primary">View Details</button>

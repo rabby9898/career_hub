@@ -3,6 +3,7 @@ import Job from "../Job/Job";
 
 const FeatureJob = ({ children }) => {
   const [jobs, setJobs] = useState([]);
+  const [cards, setCards] = useState(4);
 
   useEffect(() => {
     fetch("jobs.json")
@@ -13,9 +14,17 @@ const FeatureJob = ({ children }) => {
     <>
       <div>{children}</div>
       <div className="grid grid-cols-2 gap-10 p-5">
-        {jobs.map((job) => (
+        {jobs.slice(0, cards).map((job) => (
           <Job key={job.id} job={job}></Job>
         ))}
+      </div>
+      <div className={cards === jobs.length && "hidden"}>
+        <button
+          onClick={() => setCards(jobs.length)}
+          className="btn btn-primary"
+        >
+          Show All
+        </button>
       </div>
     </>
   );
