@@ -42,6 +42,13 @@ const Job = ({ job }) => {
               {salary}
             </p>
           </div>
+          <div className="card-actions">
+            <Link to={`/job/${id}`}>
+              <button className="btn btn-primary text-white hover:border-0 bg-gradient-to-r from-indigo-500  to-purple-500 my-5">
+                View Details
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
