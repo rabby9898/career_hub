@@ -5,7 +5,9 @@ const CategoryList = ({ children }) => {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    fetch("../../public/categories.json")
+    fetch(
+      "https://raw.githubusercontent.com/rabby9898/career_hub/main/public/categories.json"
+    )
       .then((res) => res.json())
       .then((data) => setCategory(data));
   }, []);

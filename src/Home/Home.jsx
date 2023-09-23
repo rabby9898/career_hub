@@ -8,24 +8,28 @@ const Home = () => {
       <div className=" bg-[#FAF8FF]">
         <Banner></Banner>
       </div>
-      <CategoryList>
-        <div className="md:text-center">
-          <h1 className="text-5xl font-extrabold">Job Category List</h1>
-          <p className="text-base text-[#757575] font-medium my-5">
-            Explore thousands of job opportunities with all the information you
-            need. Its your future
-          </p>
-        </div>
-      </CategoryList>
-      <FeatureJob>
-        <div className="text-center">
-          <h1 className="text-5xl font-extrabold">Featured Jobs</h1>
-          <p className="text-base text-[#757575] font-medium my-5">
-            Explore thousands of job opportunities with all the information you
-            need. Its your future
-          </p>
-        </div>
-      </FeatureJob>
+      <div>
+        <CategoryList>
+          <div className="md:text-center">
+            <h1 className="text-5xl font-extrabold">Job Category List</h1>
+            <p className="text-base text-[#757575] font-medium my-5">
+              Explore thousands of job opportunities with all the information
+              you need. Its your future
+            </p>
+          </div>
+        </CategoryList>
+      </div>
+      <div>
+        <FeatureJob>
+          <div className="text-center">
+            <h1 className="text-5xl font-extrabold">Featured Jobs</h1>
+            <p className="text-base text-[#757575] font-medium my-5">
+              Explore thousands of job opportunities with all the information
+              you need. Its your future
+            </p>
+          </div>
+        </FeatureJob>
+      </div>
     </div>
   );
 };

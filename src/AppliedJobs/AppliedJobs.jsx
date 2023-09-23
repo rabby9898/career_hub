@@ -1,13 +1,22 @@
 import { useEffect, useState } from "react";
 import { getStoredJobId } from "../Utilities/LoacalStorage";
 import ShowAppliedJobs from "../ShowAppliedJobs/ShowAppliedJobs";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
 
 const AppliedJobs = () => {
-  const jobs = useLoaderData();
+  // const jobs = useLoaderData();
   const [appliedJobs, setAppliedJobs] = useState([]);
   const [displayJobs, setDisplayJobs] = useState([]);
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://raw.githubusercontent.com/rabby9898/career_hub/main/public/jobs.json"
+    )
+      .then((res) => res.json())
+      .then((data) => setJobs(data));
+  }, []);
 
   const handleDisplayJobs = (filter) => {
     if (filter === "all") {
@@ -25,10 +34,9 @@ const AppliedJobs = () => {
     }
   };
 
-  console.log(appliedJobs);
   useEffect(() => {
     const storedData = getStoredJobId();
-    if (jobs.length) {
+    if (jobs.length > 0) {
       const jobsApplied = [];
       for (const id of storedData) {
         const job = jobs.find((job) => job.id == id);
