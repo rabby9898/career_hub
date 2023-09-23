@@ -5,7 +5,7 @@ const Category = ({ category }) => {
       <div>
         <div className="card w-full bg-base-100 shadow-xl my-5 py-6">
           <div className="p-3">
-            <img className="w-16 mx-4" src={logo} alt="Shoes" />
+            <img className="w-16 mx-4" src={logo} alt="icons" />
           </div>
           <div className="card-body">
             <h2 className="card-title">{category_name}</h2>

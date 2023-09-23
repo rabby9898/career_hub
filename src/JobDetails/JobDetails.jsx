@@ -21,7 +21,7 @@ const JobDetails = () => {
     toast("You have applied Successfully");
   };
   return (
-    <div>
+    <div className="px-4 md:px-0">
       <div>
         <div className="hero h-[30vh] bg-[#F9F9FF]">
           <div className="hero-content text-center text-neutral-content">
@@ -33,8 +33,8 @@ const JobDetails = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-6 my-12">
-        <div className="col-span-3">
+      <div className="grid col-span-1 md:grid-cols-4 gap-3 md:gap-4 lg:gap-6 my-12">
+        <div className="md:col-span-2 lg:col-span-3">
           <p className=" my-4">
             <span className="font-bold">Job Description:</span>
 
@@ -61,7 +61,7 @@ const JobDetails = () => {
           </p>
         </div>
 
-        <div className="col-span-1">
+        <div className="md:col-span-2 lg:col-span-1">
           <div className="p-5 border bg-[#d9d1f3] rounded-lg">
             <h4 className="text-xl text-black font-semibold mb-5">
               Job Details

@@ -2,12 +2,13 @@ import userImage from "../assets/images/user.png";
 const Banner = () => {
   return (
     <div>
-      <div className="hero h-[60vh] px-10">
+      <div className="hero h-full lg:h-[60vh] px-2 md:px-4 lg:px-10">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src={userImage} className="max-w-sm h-max" />
+          <img src={userImage} className="w-full lg:max-w-sm h-max" />
           <div>
             <h1 className="text-5xl font-bold">
-              One Step Closer To Your <span>Dream Job</span>
+              One Step Closer To Your{" "}
+              <span className="text-[#808EFE]">Dream Job</span>
             </h1>
             <p className="py-6">
               Explore thousands of job opportunities with all the information

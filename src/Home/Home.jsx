@@ -9,7 +9,7 @@ const Home = () => {
         <Banner></Banner>
       </div>
       <CategoryList>
-        <div className="text-center">
+        <div className="md:text-center">
           <h1 className="text-5xl font-extrabold">Job Category List</h1>
           <p className="text-base text-[#757575] font-medium my-5">
             Explore thousands of job opportunities with all the information you

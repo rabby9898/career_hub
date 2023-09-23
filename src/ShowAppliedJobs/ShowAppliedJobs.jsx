@@ -15,8 +15,8 @@ const ShowAppliedJobs = ({ job }) => {
   } = job;
   return (
     <div>
-      <div className="card card-side bg-base-100 shadow-xl grid grid-cols-4 my-5 items-center">
-        <figure className="col-span-1">
+      <div className="card card-side bg-base-100 shadow-xl grid grid-cols-1 md:grid-cols-4 my-10 items-center">
+        <figure className="col-span-1 px-6 md:px-0">
           <img src={logo} alt="company-logo" />
         </figure>
         <div className="col-span-2">
@@ -45,7 +45,7 @@ const ShowAppliedJobs = ({ job }) => {
             </div>
           </div>
         </div>
-        <div className="col-span-1">
+        <div className="col-span-1 px-6 md:px-0">
           <Link to={`/job/${id}`}>
             <button className="btn btn-primary text-white hover:border-0 bg-gradient-to-r from-indigo-500  to-purple-500 my-5">
               View Details

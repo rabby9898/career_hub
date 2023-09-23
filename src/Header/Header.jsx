@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const links = (
@@ -45,13 +45,18 @@ const Header = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">CareerHub</a>
+          <Link
+            to={"/"}
+            className="btn btn-ghost normal-case text-base md:text-xl"
+          >
+            CareerHub
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <a className=" text-white btn bg-gradient-to-r from-indigo-500  to-purple-500 my-5">
+          <a className=" text-white btn bg-gradient-to-r from-indigo-500  to-purple-500 my-5 text-sm md:text-base">
             Start Applying
           </a>
         </div>

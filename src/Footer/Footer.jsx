@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-      <div className="px-52 bg-black text-white">
+      <div className="px-2 md:px-10 lg:px-52 bg-black text-white">
         <footer className="footer p-10  text-base-content">
           <aside>
             <img src="https://i.ibb.co/qFwtSJ6/social.png" alt="" />

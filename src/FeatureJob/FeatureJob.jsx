@@ -13,7 +13,7 @@ const FeatureJob = ({ children }) => {
   return (
     <>
       <div>{children}</div>
-      <div className="grid grid-cols-2 gap-10 p-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 lg:gap-10 p-5">
         {jobs.slice(0, cards).map((job) => (
           <Job key={job.id} job={job}></Job>
         ))}
@@ -21,7 +21,7 @@ const FeatureJob = ({ children }) => {
       <div className={cards === jobs.length && "hidden"}>
         <button
           onClick={() => setCards(jobs.length)}
-          className="btn btn-primary"
+          className="btn btn-primary mx-4 my-6 md:mx-5"
         >
           Show All
         </button>
