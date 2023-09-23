@@ -45,13 +45,15 @@ const Header = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="btn btn-ghost normal-case text-xl">CareerHub</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Start Applying</a>
+          <a className=" text-white btn bg-gradient-to-r from-indigo-500  to-purple-500 my-5">
+            Start Applying
+          </a>
         </div>
       </div>
     </>
