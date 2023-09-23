@@ -5,7 +5,9 @@ import FeatureJob from "../FeatureJob/FeatureJob";
 const Home = () => {
   return (
     <div>
-      <Banner></Banner>
+      <div className=" bg-[#FAF8FF]">
+        <Banner></Banner>
+      </div>
       <CategoryList>
         <div className="text-center">
           <h1 className="text-5xl font-extrabold">Job Category List</h1>
