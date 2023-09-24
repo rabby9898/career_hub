@@ -1,18 +1,18 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { saveApplicantId } from "../Utilities/LoacalStorage";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 const JobDetails = () => {
-  // const jobs = useLoaderData();
-  const [jobs, setJobs] = useState([]);
-  useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/rabby9898/career_hub/main/public/jobs.json"
-    )
-      .then((res) => res.json())
-      .then((data) => setJobs(data));
-  }, []);
+  const jobs = useLoaderData();
+  // const [jobs, setJobs] = useState([]);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://raw.githubusercontent.com/rabby9898/career_hub/main/public/jobs.json"
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setJobs(data));
+  // }, []);
   console.log(jobs);
   const { id } = useParams();
   const idInt = parseInt(id);
