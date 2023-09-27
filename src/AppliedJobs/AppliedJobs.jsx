@@ -3,6 +3,7 @@ import { getStoredJobId } from "../Utilities/LoacalStorage";
 import ShowAppliedJobs from "../ShowAppliedJobs/ShowAppliedJobs";
 // import { useLoaderData } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
+import { Helmet } from "react-helmet";
 
 const AppliedJobs = () => {
   // const jobs = useLoaderData();
@@ -51,6 +52,9 @@ const AppliedJobs = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Carer Hub | Applied Jobs</title>
+      </Helmet>
       <div className="text-end">
         <details className="dropdown mb-10">
           <summary className="m-1 btn">

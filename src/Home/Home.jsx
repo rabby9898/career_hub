@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
 import CategoryList from "../CategoryList/CategoryList";
 import FeatureJob from "../FeatureJob/FeatureJob";
@@ -5,6 +6,9 @@ import FeatureJob from "../FeatureJob/FeatureJob";
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Carer Hub | Home</title>
+      </Helmet>
       <div className=" bg-[#FAF8FF]">
         <Banner></Banner>
       </div>
