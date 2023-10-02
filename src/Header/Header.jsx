@@ -1,6 +1,21 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
+import auth from "../Firebase/firebase.config";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut(auth)
+      .then(() => {
+        console.log("logout");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const links = (
     <>
       <li>
@@ -12,8 +27,14 @@ const Header = () => {
       <li>
         <NavLink to="/applied-jobs">Applied Jobs</NavLink>
       </li>
-      <li>
+      <li className="mr-20">
         <NavLink to="/blog">Blog</NavLink>
+      </li>
+      <li>
+        <NavLink to="/login">Login</NavLink>
+      </li>
+      <li>
+        <NavLink to="/signup">Sign Up</NavLink>
       </li>
     </>
   );
@@ -52,9 +73,36 @@ const Header = () => {
             CareerHub
           </Link>
         </div>
+
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
+        {user ? (
+          <div className="w-[30%]">
+            <div className="flex  gap-2">
+              <ul className="menu menu-horizontal">
+                <li>
+                  <details>
+                    <summary>
+                      <FaUserCircle className="text-2xl" />
+                    </summary>
+                    <ul className="p-2 bg-base-100">
+                      <li>
+                        <a>{user?.displayName}</a>
+                      </li>
+                      <li>
+                        <a>{user?.email}</a>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </div>
+            <button onClick={handleLogOut}>Sign Out</button>
+          </div>
+        ) : (
+          ""
+        )}
         <div className="navbar-end">
           <a className=" text-white btn bg-gradient-to-r from-indigo-500  to-purple-500 my-5 text-sm md:text-base">
             Start Applying

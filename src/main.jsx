@@ -8,6 +8,9 @@ import AppliedJobs from "./AppliedJobs/AppliedJobs";
 import JobDetails from "./JobDetails/JobDetails";
 import ErrorPage from "./Error/Error";
 import { HelmetProvider } from "react-helmet-async";
+import Login from "./Login/Login";
+import SignUp from "./SignUp/SignUp";
+import AuthProvider from "./AuthProvider/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +32,14 @@ const router = createBrowserRouter([
         element: <JobDetails></JobDetails>,
         loader: () => fetch("jobs.json"),
       },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+      },
     ],
   },
 ]);
@@ -36,7 +47,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HelmetProvider>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </HelmetProvider>
   </React.StrictMode>
 );
