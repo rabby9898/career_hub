@@ -30,12 +30,16 @@ const Header = () => {
       <li className="mr-20">
         <NavLink to="/blog">Blog</NavLink>
       </li>
-      <li>
-        <NavLink to="/login">Login</NavLink>
-      </li>
-      <li>
-        <NavLink to="/signup">Sign Up</NavLink>
-      </li>
+      {!user && (
+        <>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
+          <li>
+            <NavLink to="/signup">Sign Up</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -103,10 +107,14 @@ const Header = () => {
         ) : (
           ""
         )}
+
         <div className="navbar-end">
-          <a className=" text-white btn bg-gradient-to-r from-indigo-500  to-purple-500 my-5 text-sm md:text-base">
+          <Link
+            to={!user && "/login"}
+            className=" text-white btn bg-gradient-to-r from-indigo-500  to-purple-500 my-5 text-sm md:text-base"
+          >
             Start Applying
-          </a>
+          </Link>
         </div>
       </div>
     </>

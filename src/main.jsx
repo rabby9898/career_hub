@@ -11,6 +11,8 @@ import { HelmetProvider } from "react-helmet-async";
 import Login from "./Login/Login";
 import SignUp from "./SignUp/SignUp";
 import AuthProvider from "./AuthProvider/AuthProvider";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -24,12 +26,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/applied-jobs",
-        element: <AppliedJobs></AppliedJobs>,
+        element: (
+          <PrivateRoute>
+            <AppliedJobs></AppliedJobs>
+          </PrivateRoute>
+        ),
         // loader: () => fetch("../public/jobs.json"),
       },
       {
         path: "/job/:id",
-        element: <JobDetails></JobDetails>,
+        element: (
+          <PrivateRoute>
+            <JobDetails></JobDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("jobs.json"),
       },
       {
@@ -49,6 +59,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <HelmetProvider>
       <AuthProvider>
         <RouterProvider router={router} />
+        <Toaster position="top-center" />
       </AuthProvider>
     </HelmetProvider>
   </React.StrictMode>
